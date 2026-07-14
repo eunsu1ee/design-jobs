@@ -1,0 +1,32 @@
+{
+  "search_keywords": [
+    "제품디자인",
+    "제품디자이너",
+    "산업디자인",
+    "산업디자이너"
+  ],
+  "max_experience_years": 8,
+  "require_keywords": [
+    "제품디자",
+    "산업디자",
+    "제품 디자",
+    "산업 디자"
+  ],
+  "exclude_keywords": [
+    "패키지",
+    "웹디자",
+    "웹 디자",
+    "코스메틱",
+    "화장품",
+    "뷰티",
+    "식품",
+    "푸드",
+    "F&B",
+    "외식"
+  ],
+  "enabled_sources": {
+    "wanted": true,
+    "jobkorea": true,
+    "catch": true
+  }
+}

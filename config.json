@@ -27,6 +27,6 @@
   "enabled_sources": {
     "wanted": true,
     "jobkorea": true,
-    "catch": true
+    "catch": false
   }
 }

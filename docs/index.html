@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공고 스캔 — 제품·산업 디자이너</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFBF9; --ink:#1C2024; --muted:#767C85; --line:#E7E6E0;
+  --wanted:#0EA5A4; --jobkorea:#7C3AED; --catch:#E11D48;
+  --new:#B45309; --star:#D97706;
+  --mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{background:var(--paper);color:var(--ink);
+  font-family:'Pretendard Variable',Pretendard,system-ui,sans-serif;
+  font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px 96px}
+
+/* ---------- header ---------- */
+header{padding:44px 0 0}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  color:var(--muted);text-transform:uppercase}
+h1{font-size:clamp(26px,5vw,36px);font-weight:800;letter-spacing:-.03em;margin:6px 0 2px}
+.sub{color:var(--muted);font-size:13.5px}
+.updated{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:4px}
+
+/* 지표 바: 소스별 건수를 리트머스 띠로 */
+.indicator{display:flex;height:8px;border-radius:4px;overflow:hidden;
+  margin:20px 0 10px;background:var(--line)}
+.indicator span{height:100%;transition:width .5s ease}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--mono);
+  font-size:11.5px;color:var(--muted)}
+.legend .dot{display:inline-block;width:8px;height:8px;border-radius:2px;
+  margin-right:5px;vertical-align:0}
+.legend .err{color:#B91C1C}
+.legend a{border-bottom:1px dotted var(--muted)}
+
+/* ---------- controls ---------- */
+.controls{position:sticky;top:0;z-index:5;background:var(--paper);
+  padding:14px 0 12px;border-bottom:1px solid var(--line);margin-top:14px}
+.controls .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+input[type=search]{flex:1;min-width:180px;padding:9px 12px;font:inherit;
+  border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+input[type=search]:focus{outline:2px solid var(--ink);outline-offset:1px}
+.chip{font-family:var(--mono);font-size:11.5px;padding:7px 11px;border-radius:8px;
+  border:1px solid var(--line);background:#fff;cursor:pointer;color:var(--muted);
+  transition:all .12s}
+.chip[aria-pressed=true]{color:#fff;border-color:transparent}
+.chip:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
+.chip[data-src=wanted][aria-pressed=true]{background:var(--wanted)}
+.chip[data-src=jobkorea][aria-pressed=true]{background:var(--jobkorea)}
+.chip[data-src=catch][aria-pressed=true]{background:var(--catch)}
+.chip.mode[aria-pressed=true]{background:var(--ink)}
+.count{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-left:auto}
+
+/* ---------- list ---------- */
+ul{list-style:none}
+li.job{display:flex;gap:14px;padding:16px 4px 16px 0;border-bottom:1px solid var(--line);
+  align-items:flex-start;transition:background .12s}
+li.job:hover{background:#F3F2EE}
+.strip{width:4px;align-self:stretch;border-radius:2px;flex:none}
+.strip.wanted{background:var(--wanted)}
+.strip.jobkorea{background:var(--jobkorea)} .strip.catch{background:var(--catch)}
+.body{flex:1;min-width:0}
+.title{font-weight:700;font-size:15.5px;letter-spacing:-.01em;line-height:1.4}
+.title a:hover{text-decoration:underline;text-underline-offset:3px}
+.meta{margin-top:3px;font-size:13px;color:var(--muted);
+  display:flex;flex-wrap:wrap;gap:4px 10px}
+.meta .co{color:var(--ink);font-weight:500}
+.side{flex:none;text-align:right}
+.date{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.badge-new{display:inline-block;font-family:var(--mono);font-size:10px;
+  color:var(--new);border:1px solid currentColor;border-radius:4px;
+  padding:1px 5px;margin-bottom:4px}
+.acts{margin-top:6px;display:flex;gap:4px;justify-content:flex-end}
+.iconbtn{border:none;background:none;cursor:pointer;font-size:15px;
+  color:var(--line);padding:2px;line-height:1}
+.iconbtn:hover,.iconbtn:focus-visible{color:var(--muted);outline:none}
+.iconbtn.on{color:var(--star)}
+li.read .title,li.read .meta{opacity:.42}
+li.read .strip{opacity:.35}
+.empty{padding:60px 0;text-align:center;color:var(--muted)}
+.empty .big{font-size:17px;font-weight:600;color:var(--ink);margin-bottom:6px}
+footer{margin-top:36px;font-family:var(--mono);font-size:11px;color:var(--muted)}
+@media (max-width:560px){
+  li.job{gap:10px}
+  .title{font-size:14.5px}
+  .side{min-width:52px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Daily Scan · 수도권 · 경력 8년 이하</div>
+    <h1>제품·산업 디자이너 공고</h1>
+    <div class="sub">패키지·웹 직무, 코스메틱·식품 카테고리 제외</div>
+    <div class="updated" id="updated">불러오는 중…</div>
+    <div class="indicator" id="indicator" aria-hidden="true"></div>
+    <div class="legend" id="legend"></div>
+  </header>
+
+  <div class="controls">
+    <div class="row">
+      <input type="search" id="q" placeholder="회사·공고명 검색" aria-label="검색">
+      <button class="chip" data-src="wanted"   aria-pressed="true">원티드</button>
+      <button class="chip" data-src="jobkorea" aria-pressed="true">잡코리아</button>
+      <button class="chip" data-src="catch"    aria-pressed="true">캐치</button>
+      <button class="chip mode" id="unreadOnly" aria-pressed="false">안 읽음만</button>
+      <button class="chip mode" id="starOnly"  aria-pressed="false">★만</button>
+      <span class="count" id="count"></span>
+    </div>
+  </div>
+
+  <ul id="list"></ul>
+  <div class="empty" id="empty" hidden>
+    <div class="big">표시할 공고가 없습니다</div>
+    <div>필터를 조정하거나, 다음 수집 시각을 기다려 보세요.</div>
+  </div>
+
+  <footer>리멤버는 로그인이 필요해 자동 수집에서 제외 —
+    <a href="https://career.rememberapp.co.kr" target="_blank" rel="noopener"
+       style="border-bottom:1px dotted var(--muted)">리멤버에서 직접 확인 ↗</a></footer>
+</div>
+
+<script>
+const SRC = {
+  wanted:{name:"원티드",color:"var(--wanted)"},
+  jobkorea:{name:"잡코리아",color:"var(--jobkorea)"},
+  catch:{name:"캐치",color:"var(--catch)"},
+};
+const store = {
+  get(k){try{return new Set(JSON.parse(localStorage.getItem(k)||"[]"))}catch{return new Set()}},
+  set(k,s){localStorage.setItem(k,JSON.stringify([...s]))}
+};
+let read = store.get("read"), starred = store.get("starred");
+let jobs = [], meta = {};
+const state = {q:"", src:new Set(Object.keys(SRC)), unread:false, star:false};
+
+const $ = id => document.getElementById(id);
+const esc = s => (s||"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmtDate = iso => iso ? iso.slice(5,10).replace("-","/") : "";
+const isNew = iso => iso && (Date.now() - new Date(iso).getTime()) < 36*3600*1000;
+
+async function load(){
+  try{
+    const r = await fetch("jobs.json?t="+Date.now());
+    const data = await r.json();
+    jobs = data.jobs||[]; meta = data;
+    $("updated").textContent = "마지막 수집 " + (data.updated||"").replace("T"," ").slice(0,16);
+    renderHeader(); render();
+  }catch(e){
+    $("updated").textContent = "jobs.json을 불러오지 못했습니다 — 수집이 한 번 실행된 뒤에 표시됩니다.";
+  }
+}
+
+function renderHeader(){
+  const counts = {}; jobs.forEach(j=>counts[j.source]=(counts[j.source]||0)+1);
+  const total = jobs.length||1;
+  $("indicator").innerHTML = Object.keys(SRC)
+    .map(s=>`<span style="width:${(counts[s]||0)/total*100}%;background:${SRC[s].color}"></span>`).join("");
+  $("legend").innerHTML = Object.keys(SRC).map(s=>{
+    const st = (meta.sources||{})[s]||{};
+    const ok = st.ok!==false;
+    return `<span title="${esc(st.error||"")}">
+      <span class="dot" style="background:${SRC[s].color}"></span>${SRC[s].name}
+      ${ok?`${counts[s]||0}건`:`<span class="err">수집 실패</span>`}</span>`;
+  }).join("");
+}
+
+function render(){
+  const q = state.q.toLowerCase();
+  const rows = jobs.filter(j=>
+    state.src.has(j.source)
+    && (!state.unread || !read.has(j.id))
+    && (!state.star || starred.has(j.id))
+    && (!q || (j.title+" "+j.company).toLowerCase().includes(q))
+  );
+  $("count").textContent = rows.length + " / " + jobs.length;
+  $("empty").hidden = rows.length>0;
+  $("list").innerHTML = rows.map(j=>`
+    <li class="job ${read.has(j.id)?"read":""}" data-id="${esc(j.id)}">
+      <span class="strip ${esc(j.source)}"></span>
+      <div class="body">
+        <div class="title"><a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a></div>
+        <div class="meta">
+          ${j.company?`<span class="co">${esc(j.company)}</span>`:""}
+          ${j.location&&j.location.length<60?`<span>${esc(j.location)}</span>`:""}
+          ${j.experience&&j.experience.length<30?`<span>${esc(j.experience)}</span>`:""}
+        </div>
+      </div>
+      <div class="side">
+        ${isNew(j.first_seen)?`<div class="badge-new">NEW</div>`:""}
+        <div class="date">${fmtDate(j.first_seen)}</div>
+        <div class="acts">
+          <button class="iconbtn ${starred.has(j.id)?"on":""}" data-act="star" aria-label="즐겨찾기">★</button>
+          <button class="iconbtn" data-act="read" aria-label="읽음 표시">✓</button>
+        </div>
+      </div>
+    </li>`).join("");
+}
+
+$("list").addEventListener("click", e=>{
+  const li = e.target.closest("li.job"); if(!li) return;
+  const id = li.dataset.id;
+  const act = e.target.dataset && e.target.dataset.act;
+  if(act==="star"){ starred.has(id)?starred.delete(id):starred.add(id); store.set("starred",starred); render(); return; }
+  if(act==="read"){ read.has(id)?read.delete(id):read.add(id); store.set("read",read); render(); return; }
+  if(e.target.closest("a")){ read.add(id); store.set("read",read); setTimeout(render,150); }
+});
+document.querySelectorAll(".chip[data-src]").forEach(b=>b.addEventListener("click",()=>{
+  const s=b.dataset.src, on=b.getAttribute("aria-pressed")==="true";
+  b.setAttribute("aria-pressed",String(!on));
+  on?state.src.delete(s):state.src.add(s); render();
+}));
+$("unreadOnly").addEventListener("click",e=>{
+  state.unread=!state.unread; e.target.setAttribute("aria-pressed",String(state.unread)); render();});
+$("starOnly").addEventListener("click",e=>{
+  state.star=!state.star; e.target.setAttribute("aria-pressed",String(state.star)); render();});
+$("q").addEventListener("input",e=>{state.q=e.target.value; render();});
+
+load();
+</script>
+</body>
+</html>

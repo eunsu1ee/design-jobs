@@ -90,13 +90,25 @@ def passes_filters(job, cfg):
 def src_wanted(cfg):
     """원티드 프론트엔드가 사용하는 검색 JSON 엔드포인트 (비공식)"""
     jobs = []
+    headers = {"Referer": "https://www.wanted.co.kr/search",
+               "Accept": "application/json"}
     for kw in cfg["search_keywords"]:
-        r = session.get("https://www.wanted.co.kr/api/v4/jobs", params={
+        r = session.get("https://www.wanted.co.kr/api/v4/search", params={
             "query": kw, "country": "kr", "job_sort": "job.latest_order",
-            "locations": "all", "years": 0, "limit": 50, "offset": 0,
-        }, timeout=30)
+        }, headers=headers, timeout=30)
+        if r.status_code == 404:  # 구버전 경로 폴백
+            r = session.get("https://www.wanted.co.kr/api/v4/jobs", params={
+                "query": kw, "country": "kr", "job_sort": "job.latest_order",
+                "locations": "all", "limit": 50, "offset": 0,
+            }, headers=headers, timeout=30)
         r.raise_for_status()
-        for j in r.json().get("data", []):
+        body = r.json()
+        data = body.get("data", [])
+        if isinstance(data, dict):  # /search 응답은 {"jobs": [...]} 형태일 수 있음
+            data = data.get("jobs", [])
+        if not data:
+            print(f"[wanted] '{kw}' 응답 비어있음. keys={list(body)[:8]}")
+        for j in data:
             jid = j.get("id")
             addr = (j.get("address") or {})
             jobs.append({
@@ -135,14 +147,17 @@ def src_jobkorea(cfg):
                 continue
             container = a.find_parent("article") or a.find_parent("li") \
                 or a.find_parent("div") or a
-            ctx = container.get_text(" ", strip=True)[:300]
+            ctx = container.get_text(" ", strip=True)
+            # 주변 텍스트에서 지역 단어만 추출 (필터 오탐 방지: ctx 전체를 쓰지 않음)
+            region = next((w for w in ("서울", "경기", "인천") if w in ctx[:200]), "")
+            m_exp = re.search(r"경력\s*\d+[~년][^\s]{0,6}", ctx)
             jobs.append({
                 "id": f"jobkorea:{jid}",
                 "source": "jobkorea",
                 "title": title,
                 "company": "",
-                "location": ctx,        # 지역 필터는 주변 텍스트로 판단
-                "experience": ctx,
+                "location": region,     # 미상("")이면 필터에서 통과 처리됨
+                "experience": m_exp.group(0) if m_exp else "",
                 "exp_min": None,
                 "extra": "",
                 "url": f"https://www.jobkorea.co.kr/Recruit/GI_Read/{jid}",
@@ -156,7 +171,9 @@ def src_catch(cfg):
     jobs = []
     for kw in cfg["search_keywords"]:
         r = session.get("https://www.catch.co.kr/Search/SearchDetail",
-                        params={"Keyword": kw}, timeout=30)
+                        params={"Keyword": kw},
+                        headers={"Referer": "https://www.catch.co.kr/"},
+                        timeout=30)
         r.raise_for_status()
         soup = BeautifulSoup(r.text, "html.parser")
         for a in soup.select("a[href*='RecruitInfoDetails']"):

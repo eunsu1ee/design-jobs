@@ -1,26 +1,39 @@
 {
- "updated": "2026-07-14T19:50:12+09:00",
+ "updated": "2026-07-15T09:23:49+09:00",
  "sources": {
   "wanted": {
    "ok": true,
    "count": 4,
    "raw": 80,
-   "at": "2026-07-14T19:50:12+09:00"
+   "at": "2026-07-15T09:23:49+09:00"
   },
   "jobkorea": {
    "ok": true,
-   "count": 23,
-   "raw": 74,
-   "at": "2026-07-14T19:50:12+09:00"
+   "count": 22,
+   "raw": 79,
+   "at": "2026-07-15T09:23:49+09:00"
   },
   "catch": {
    "ok": true,
    "count": 0,
    "note": "비활성화됨",
-   "at": "2026-07-14T19:50:12+09:00"
+   "at": "2026-07-15T09:23:49+09:00"
   }
  },
  "jobs": [
+  {
+   "id": "jobkorea:49565621",
+   "source": "jobkorea",
+   "title": "[모윰] 제품 디자인 경력 채용(정규직, 4년 이상)",
+   "company": "㈜쁘띠엘린",
+   "location": "서울 서초구",
+   "experience": "신입",
+   "exp_min": null,
+   "extra": "",
+   "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49565621",
+   "first_seen": "2026-07-15T09:23:49+09:00",
+   "last_seen": "2026-07-15T09:23:49+09:00"
+  },
   {
    "id": "wanted:373749",
    "source": "wanted",
@@ -32,7 +45,7 @@
    "extra": "",
    "url": "https://www.wanted.co.kr/wd/373749",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "wanted:373396",
@@ -45,7 +58,7 @@
    "extra": "",
    "url": "https://www.wanted.co.kr/wd/373396",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49551441",
@@ -58,20 +71,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49551441",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
-  },
-  {
-   "id": "jobkorea:49426340",
-   "source": "jobkorea",
-   "title": "제품디자인 경력 채용",
-   "company": "",
-   "location": "",
-   "experience": "",
-   "exp_min": null,
-   "extra": "",
-   "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49426340",
-   "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49463410",
@@ -84,7 +84,20 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49463410",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
+  },
+  {
+   "id": "jobkorea:49426340",
+   "source": "jobkorea",
+   "title": "제품디자인 경력 채용",
+   "company": "",
+   "location": "",
+   "experience": "",
+   "exp_min": null,
+   "extra": "",
+   "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49426340",
+   "first_seen": "2026-07-14T18:07:59+09:00",
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49475365",
@@ -97,7 +110,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49475365",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49499515",
@@ -110,7 +123,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49499515",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49541912",
@@ -123,7 +136,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49541912",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49203648",
@@ -136,7 +149,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49203648",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49500147",
@@ -149,7 +162,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49500147",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49519528",
@@ -162,7 +175,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49519528",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49557865",
@@ -175,20 +188,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49557865",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
-  },
-  {
-   "id": "jobkorea:49516354",
-   "source": "jobkorea",
-   "title": "제품디자인 정규직 모집 - 신입&경력 (R&D 전문기업)",
-   "company": "",
-   "location": "",
-   "experience": "",
-   "exp_min": null,
-   "extra": "",
-   "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49516354",
-   "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49527022",
@@ -201,7 +201,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49527022",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49252279",
@@ -214,7 +214,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49252279",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49487794",
@@ -227,7 +227,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49487794",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49476235",
@@ -240,7 +240,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49476235",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49509059",
@@ -253,7 +253,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49509059",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49366914",
@@ -266,7 +266,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49366914",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49473944",
@@ -279,7 +279,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49473944",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49474744",
@@ -292,7 +292,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49474744",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49557502",
@@ -305,7 +305,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49557502",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49234360",
@@ -318,7 +318,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49234360",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-14T19:50:12+09:00"
+   "last_seen": "2026-07-15T09:23:49+09:00"
   },
   {
    "id": "jobkorea:49528778",
@@ -330,6 +330,19 @@
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49528778",
+   "first_seen": "2026-07-14T18:07:59+09:00",
+   "last_seen": "2026-07-15T09:23:49+09:00"
+  },
+  {
+   "id": "jobkorea:49516354",
+   "source": "jobkorea",
+   "title": "제품디자인 정규직 모집 - 신입&경력 (R&D 전문기업)",
+   "company": "",
+   "location": "",
+   "experience": "",
+   "exp_min": null,
+   "extra": "",
+   "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49516354",
    "first_seen": "2026-07-14T18:07:59+09:00",
    "last_seen": "2026-07-14T19:50:12+09:00"
   },

@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 제품·산업 디자이너 채용 공고 수집기 (멀티 소스)
-- 소스: 원티드(JSON) / 잡코리아(스크래핑) / 캐치(스크래핑)
+- 소스: 사람인(공식 API) / 원티드(JSON) / 잡코리아(스크래핑) / 캐치(스크래핑)
 - 결과: docs/jobs.json  →  GitHub Pages 대시보드(docs/index.html)가 읽음
 - 필터: 서울/경기/인천, 요구 경력 8년 이하, 제외 키워드(패키지·웹·코스메틱·식품 등)
 
+환경변수: SARAMIN_ACCESS_KEY (사람인만 필요)
 의존성: requests, beautifulsoup4
 """
 
@@ -87,6 +88,44 @@ def passes_filters(job, cfg):
 
 
 # ---------------------------------------------------------------- sources
+def src_saramin(cfg):
+    key = os.environ.get("SARAMIN_ACCESS_KEY")
+    if not key:
+        raise RuntimeError("SARAMIN_ACCESS_KEY 미설정 (Settings > Secrets 확인)")
+    jobs = []
+    loc = ",".join(cfg["location_codes_saramin"])
+    for kw in cfg["search_keywords"]:
+        r = session.get("https://oapi.saramin.co.kr/job-search", params={
+            "access-key": key, "keywords": kw, "loc_cd": loc,
+            "sort": "pd", "count": 110,
+        }, headers={"Accept": "application/json"}, timeout=30)
+        r.raise_for_status()
+        for j in (r.json().get("jobs", {}).get("job", []) or []):
+            pos = j.get("position", {})
+            exp = pos.get("experience-level") or {}
+            try:
+                exp_min = int(exp.get("min", 0)) or None
+            except (TypeError, ValueError):
+                exp_min = None
+            jobs.append({
+                "id": f"saramin:{j.get('id')}",
+                "source": "saramin",
+                "title": pos.get("title", ""),
+                "company": ((j.get("company") or {}).get("detail") or {}).get("name", ""),
+                "location": (pos.get("location") or {}).get("name", "").replace("&gt;", ">"),
+                "experience": exp.get("name", ""),
+                "exp_min": exp_min,
+                "extra": " ".join([
+                    (pos.get("industry") or {}).get("name", ""),
+                    (pos.get("job-code") or {}).get("name", ""),
+                    j.get("keyword", ""),
+                ]),
+                "url": j.get("url", ""),
+            })
+        time.sleep(1)
+    return jobs
+
+
 def src_wanted(cfg):
     """원티드 프론트엔드가 사용하는 검색 JSON 엔드포인트 (비공식)"""
     jobs = []
@@ -229,6 +268,7 @@ def enrich_jobkorea(job):
 
 
 SOURCES = {
+    "saramin": src_saramin,
     "wanted": src_wanted,
     "jobkorea": src_jobkorea,
     "catch": src_catch,

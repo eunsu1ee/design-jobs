@@ -26,6 +26,8 @@ jobs:
         run: pip install requests beautifulsoup4
 
       - name: Collect jobs
+        env:
+          SARAMIN_ACCESS_KEY: ${{ secrets.SARAMIN_ACCESS_KEY }}
         run: python collector.py
 
       - name: Commit jobs.json

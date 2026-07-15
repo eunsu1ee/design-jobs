@@ -203,6 +203,31 @@ def src_catch(cfg):
     return jobs
 
 
+def enrich_jobkorea(job):
+    """잡코리아 상세 페이지에서 회사명/근무지역/경력을 보강 (신규 공고만 호출)"""
+    r = session.get(job["url"], timeout=30)
+    r.raise_for_status()
+    soup = BeautifulSoup(r.text, "html.parser")
+
+    # 회사명: <title> 이 보통 "회사명 채용 - 공고제목 …" 형태
+    t = soup.title.get_text(strip=True) if soup.title else ""
+    m = re.match(r"(.+?)\s*채용", t)
+    if m and not job.get("company"):
+        job["company"] = m.group(1).strip()[:40]
+
+    text = soup.get_text(" ", strip=True)
+    # 근무지역: "서울 강남구" 같은 광역+시군구 패턴 (수도권 외 지역도 잡아 재필터에 사용)
+    lm = re.search(
+        r"(서울|경기|인천|부산|대구|대전|광주|울산|세종|강원|충북|충남|"
+        r"전북|전남|경북|경남|제주)\s?[가-힣]{1,8}[시군구]", text)
+    if lm:
+        job["location"] = lm.group(0)
+    # 경력 조건
+    em = re.search(r"경력\s*\d+\s*년[^\s]{0,4}|경력\s*\d+\s*~\s*\d+|경력무관|신입", text)
+    if em:
+        job["experience"] = em.group(0)
+
+
 SOURCES = {
     "wanted": src_wanted,
     "jobkorea": src_jobkorea,
@@ -244,6 +269,23 @@ def main():
                 if j.get("source") == name:
                     current.setdefault(jid, j)
             print(f"[{name}] 실패: {e}")
+
+    # 잡코리아 신규 공고 상세 보강 → 보강된 정보로 재필터
+    enriched = 0
+    for jid in list(current.keys()):
+        j = current[jid]
+        if j.get("source") != "jobkorea" or jid in prev_jobs or enriched >= 25:
+            continue
+        try:
+            enrich_jobkorea(j)
+            enriched += 1
+            time.sleep(0.7)
+            if not passes_filters(j, cfg):
+                del current[jid]   # 상세에서 지역/경력/제외어 확인돼 탈락
+        except Exception as e:
+            print(f"[jobkorea] 상세 보강 실패 {jid}: {e}")
+    if enriched:
+        print(f"[jobkorea] 상세 보강 {enriched}건")
 
     # first_seen / last_seen 병합
     merged = []

@@ -25,8 +25,14 @@
     "외식"
   ],
   "enabled_sources": {
+    "saramin": true,
     "wanted": true,
     "jobkorea": true,
     "catch": false
-  }
+  },
+  "location_codes_saramin": [
+    "101000",
+    "102000",
+    "108000"
+  ]
 }

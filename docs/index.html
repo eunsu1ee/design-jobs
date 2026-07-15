@@ -10,7 +10,7 @@
 <style>
 :root{
   --paper:#FBFBF9; --ink:#1C2024; --muted:#767C85; --line:#E7E6E0;
-  --wanted:#0EA5A4; --jobkorea:#7C3AED; --catch:#E11D48;
+  --saramin:#2563EB; --wanted:#0EA5A4; --jobkorea:#7C3AED; --catch:#E11D48;
   --new:#B45309; --star:#D97706;
   --mono:'IBM Plex Mono',monospace;
 }
@@ -57,6 +57,7 @@ input[type=search]:focus{outline:2px solid var(--ink);outline-offset:1px}
 .chip[data-src=wanted][aria-pressed=true]{background:var(--wanted)}
 .chip[data-src=jobkorea][aria-pressed=true]{background:var(--jobkorea)}
 .chip[data-src=catch][aria-pressed=true]{background:var(--catch)}
+.chip[data-src=saramin][aria-pressed=true]{background:var(--saramin)}
 .chip.mode[aria-pressed=true]{background:var(--ink)}
 .count{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-left:auto}
 
@@ -66,7 +67,7 @@ li.job{display:flex;gap:14px;padding:16px 4px 16px 0;border-bottom:1px solid var
   align-items:flex-start;transition:background .12s}
 li.job:hover{background:#F3F2EE}
 .strip{width:4px;align-self:stretch;border-radius:2px;flex:none}
-.strip.wanted{background:var(--wanted)}
+.strip.saramin{background:var(--saramin)} .strip.wanted{background:var(--wanted)}
 .strip.jobkorea{background:var(--jobkorea)} .strip.catch{background:var(--catch)}
 .body{flex:1;min-width:0}
 .title{font-weight:700;font-size:15.5px;letter-spacing:-.01em;line-height:1.4}
@@ -110,6 +111,7 @@ footer{margin-top:36px;font-family:var(--mono);font-size:11px;color:var(--muted)
   <div class="controls">
     <div class="row">
       <input type="search" id="q" placeholder="회사·공고명 검색" aria-label="검색">
+      <button class="chip" data-src="saramin"  aria-pressed="true">사람인</button>
       <button class="chip" data-src="wanted"   aria-pressed="true">원티드</button>
       <button class="chip" data-src="jobkorea" aria-pressed="true">잡코리아</button>
       <button class="chip" data-src="catch"    aria-pressed="true">캐치</button>
@@ -132,6 +134,7 @@ footer{margin-top:36px;font-family:var(--mono);font-size:11px;color:var(--muted)
 
 <script>
 const SRC = {
+  saramin:{name:"사람인",color:"var(--saramin)"},
   wanted:{name:"원티드",color:"var(--wanted)"},
   jobkorea:{name:"잡코리아",color:"var(--jobkorea)"},
   catch:{name:"캐치",color:"var(--catch)"},

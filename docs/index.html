@@ -81,10 +81,12 @@ li.job:hover{background:#F3F2EE}
   color:var(--new);border:1px solid currentColor;border-radius:4px;
   padding:1px 5px;margin-bottom:4px}
 .acts{margin-top:6px;display:flex;gap:4px;justify-content:flex-end}
-.iconbtn{border:none;background:none;cursor:pointer;font-size:15px;
-  color:var(--line);padding:2px;line-height:1}
-.iconbtn:hover,.iconbtn:focus-visible{color:var(--muted);outline:none}
+.iconbtn{border:none;background:none;cursor:pointer;font-size:16px;
+  color:#CBC9C2;width:30px;height:30px;border-radius:7px;line-height:1;
+  display:inline-flex;align-items:center;justify-content:center}
+.iconbtn:hover,.iconbtn:focus-visible{background:#ECEAE4;color:var(--muted);outline:none}
 .iconbtn.on{color:var(--star)}
+.iconbtn.on[data-act=read]{color:#15803D;background:#E9F3EC}
 li.read .title,li.read .meta{opacity:.42}
 li.read .strip{opacity:.35}
 .empty{padding:60px 0;text-align:center;color:var(--muted)}
@@ -203,8 +205,8 @@ function render(){
         ${isNew(j.first_seen)?`<div class="badge-new">NEW</div>`:""}
         <div class="date">${fmtDate(j.first_seen)}</div>
         <div class="acts">
-          <button class="iconbtn ${starred.has(j.id)?"on":""}" data-act="star" aria-label="즐겨찾기">★</button>
-          <button class="iconbtn" data-act="read" aria-label="읽음 표시">✓</button>
+          <button class="iconbtn ${starred.has(j.id)?"on":""}" data-act="star" aria-label="즐겨찾기" aria-pressed="${starred.has(j.id)}">★</button>
+          <button class="iconbtn ${read.has(j.id)?"on":""}" data-act="read" aria-label="읽음 표시" aria-pressed="${read.has(j.id)}">✓</button>
         </div>
       </div>
     </li>`).join("");
@@ -213,7 +215,8 @@ function render(){
 $("list").addEventListener("click", e=>{
   const li = e.target.closest("li.job"); if(!li) return;
   const id = li.dataset.id;
-  const act = e.target.dataset && e.target.dataset.act;
+  const actBtn = e.target.closest("[data-act]");
+  const act = actBtn && actBtn.dataset.act;
   if(act==="star"){ starred.has(id)?starred.delete(id):starred.add(id); store.set("starred",starred); render(); return; }
   if(act==="read"){ read.has(id)?read.delete(id):read.add(id); store.set("read",read); render(); return; }
   if(e.target.closest("a")){ read.add(id); store.set("read",read); setTimeout(render,150); }

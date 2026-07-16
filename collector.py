@@ -169,10 +169,24 @@ def src_jobkorea(cfg):
     """잡코리아 검색 결과 페이지 스크래핑 (사이트 개편 시 조정 필요)"""
     jobs = []
     for kw in cfg["search_keywords"]:
-        r = session.get("https://www.jobkorea.co.kr/Search/", params={
-            "stext": kw, "tabType": "recruit", "Page_No": 1,
-        }, timeout=30)
-        r.raise_for_status()
+        r, last_err = None, None
+        # PC → 모바일 순서로 시도 (해외 IP 차단 우회), 각 2회 재시도
+        for base in ("https://www.jobkorea.co.kr/Search/",
+                     "https://m.jobkorea.co.kr/Search/"):
+            for _ in range(2):
+                try:
+                    r = session.get(base, params={
+                        "stext": kw, "tabType": "recruit", "Page_No": 1,
+                    }, timeout=12)
+                    r.raise_for_status()
+                    break
+                except Exception as e:
+                    last_err, r = e, None
+                    time.sleep(2)
+            if r is not None:
+                break
+        if r is None:
+            raise last_err
         soup = BeautifulSoup(r.text, "html.parser")
         # 공고 상세 링크(/Recruit/GI_Read/)를 앵커로 삼아 주변 텍스트 수집
         for a in soup.select("a[href*='/Recruit/GI_Read/']"):
@@ -244,8 +258,12 @@ def src_catch(cfg):
 
 def enrich_jobkorea(job):
     """잡코리아 상세 페이지에서 회사명/근무지역/경력을 보강 (신규 공고만 호출)"""
-    r = session.get(job["url"], timeout=30)
-    r.raise_for_status()
+    try:
+        r = session.get(job["url"], timeout=12)
+        r.raise_for_status()
+    except Exception:
+        r = session.get(job["url"].replace("://www.", "://m."), timeout=12)
+        r.raise_for_status()
     soup = BeautifulSoup(r.text, "html.parser")
 
     # 회사명: <title> 이 보통 "회사명 채용 - 공고제목 …" 형태

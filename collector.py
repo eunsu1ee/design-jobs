@@ -165,6 +165,9 @@ def src_wanted(cfg):
     return jobs
 
 
+_JK_HOST = ["www"]  # 잡코리아 검색이 성공한 호스트 (www 또는 m)
+
+
 def src_jobkorea(cfg):
     """잡코리아 검색 결과 페이지 스크래핑 (사이트 개편 시 조정 필요)"""
     jobs = []
@@ -184,6 +187,7 @@ def src_jobkorea(cfg):
                     last_err, r = e, None
                     time.sleep(2)
             if r is not None:
+                _JK_HOST[0] = "m" if "://m." in base else "www"
                 break
         if r is None:
             raise last_err
@@ -256,21 +260,42 @@ def src_catch(cfg):
     return jobs
 
 
+_JK_DIAG = [0]  # 보강 파싱 실패 진단 로그 횟수 제한
+
+
 def enrich_jobkorea(job):
     """잡코리아 상세 페이지에서 회사명/근무지역/경력을 보강 (신규 공고만 호출)"""
-    try:
-        r = session.get(job["url"], timeout=12)
-        r.raise_for_status()
-    except Exception:
-        r = session.get(job["url"].replace("://www.", "://m."), timeout=12)
-        r.raise_for_status()
+    pc = job["url"]
+    mo = pc.replace("://www.", "://m.")
+    urls = (mo, pc) if _JK_HOST[0] == "m" else (pc, mo)
+    r = None
+    for u in urls:
+        try:
+            r = session.get(u, timeout=12)
+            r.raise_for_status()
+            break
+        except Exception:
+            r = None
+    if r is None:
+        raise RuntimeError("상세 페이지 접속 실패 (www/m 모두)")
     soup = BeautifulSoup(r.text, "html.parser")
 
-    # 회사명: <title> 이 보통 "회사명 채용 - 공고제목 …" 형태
-    t = soup.title.get_text(strip=True) if soup.title else ""
-    m = re.match(r"(.+?)\s*채용", t)
-    if m and not job.get("company"):
-        job["company"] = m.group(1).strip()[:40]
+    # 회사명 후보 1: 기업정보 페이지로 가는 링크 텍스트
+    if not job.get("company"):
+        co = soup.select_one("a[href*='Co_Read']")
+        if co:
+            name = co.get_text(" ", strip=True)[:40]
+            if 1 < len(name) <= 40 and "기업정보" not in name:
+                job["company"] = name
+    # 회사명 후보 2: og:title / title 의 "회사명 채용" 패턴
+    if not job.get("company"):
+        og = soup.find("meta", attrs={"property": "og:title"})
+        for t in ((og.get("content", "") if og else ""),
+                  (soup.title.get_text(strip=True) if soup.title else "")):
+            m = re.match(r"(.+?)\s*채용", t or "")
+            if m:
+                job["company"] = m.group(1).strip()[:40]
+                break
 
     text = soup.get_text(" ", strip=True)
     # 근무지역: "서울 강남구" 같은 광역+시군구 패턴 (수도권 외 지역도 잡아 재필터에 사용)
@@ -283,6 +308,12 @@ def enrich_jobkorea(job):
     em = re.search(r"경력\s*\d+\s*년[^\s]{0,4}|경력\s*\d+\s*~\s*\d+|경력무관|신입", text)
     if em:
         job["experience"] = em.group(0)
+
+    # 파싱 전멸 시 원인 파악용 진단 (실행당 최대 2회)
+    if not job.get("company") and not job.get("location") and _JK_DIAG[0] < 2:
+        _JK_DIAG[0] += 1
+        ttl = soup.title.get_text(strip=True)[:80] if soup.title else "(no title)"
+        print(f"[jobkorea][diag] 파싱 실패 — 응답 페이지 title='{ttl}' / 크기 {len(r.text)}자 / url={r.url}")
 
 
 SOURCES = {

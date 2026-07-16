@@ -1,27 +1,26 @@
 {
- "updated": "2026-07-16T14:47:56+09:00",
+ "updated": "2026-07-16T17:20:04+09:00",
  "sources": {
   "saramin": {
    "ok": false,
    "error": "SARAMIN_ACCESS_KEY 미설정 (Settings > Secrets 확인)",
-   "at": "2026-07-16T14:47:56+09:00"
+   "at": "2026-07-16T17:20:04+09:00"
   },
   "wanted": {
    "ok": false,
    "error": "403 Client Error: Forbidden for url: https://www.wanted.co.kr/api/v4/search?query=%EC%A0%9C%ED%92%88%EB%94%94%EC%9E%90%EC%9D%B8&country=kr&job_sort=job.latest_order",
-   "at": "2026-07-16T14:47:56+09:00"
+   "at": "2026-07-16T17:20:04+09:00"
   },
   "jobkorea": {
-   "ok": true,
-   "count": 28,
-   "raw": 146,
-   "at": "2026-07-16T14:47:56+09:00"
+   "ok": false,
+   "error": "HTTPSConnectionPool(host='m.jobkorea.co.kr', port=443): Max retries exceeded with url: /Search/?stext=%EC%A0%9C%ED%92%88%EB%94%94%EC%9E%90%EC%9D%B8&tabType=recruit&Page_No=1 (Caused by ConnectTimeoutE",
+   "at": "2026-07-16T17:20:04+09:00"
   },
   "catch": {
    "ok": true,
    "count": 0,
    "note": "비활성화됨",
-   "at": "2026-07-16T14:47:56+09:00"
+   "at": "2026-07-16T17:20:04+09:00"
   }
  },
  "jobs": [
@@ -36,7 +35,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49536533",
    "first_seen": "2026-07-16T14:47:56+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49431904",
@@ -49,7 +48,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49431904",
    "first_seen": "2026-07-16T14:47:56+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "wanted:370748",
@@ -62,7 +61,7 @@
    "extra": "",
    "url": "https://www.wanted.co.kr/wd/370748",
    "first_seen": "2026-07-16T12:31:55+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49305734",
@@ -75,7 +74,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49305734",
    "first_seen": "2026-07-16T12:31:55+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49549161",
@@ -88,7 +87,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49549161",
    "first_seen": "2026-07-16T12:31:55+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49485244",
@@ -101,7 +100,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49485244",
    "first_seen": "2026-07-16T12:31:55+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49526335",
@@ -114,7 +113,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49526335",
    "first_seen": "2026-07-16T12:31:55+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49592164",
@@ -127,7 +126,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49592164",
    "first_seen": "2026-07-16T12:02:44+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "wanted:375137",
@@ -140,7 +139,7 @@
    "extra": "",
    "url": "https://www.wanted.co.kr/wd/375137",
    "first_seen": "2026-07-15T14:22:55+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49565621",
@@ -153,7 +152,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49565621",
    "first_seen": "2026-07-15T09:23:49+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "wanted:373749",
@@ -166,7 +165,7 @@
    "extra": "",
    "url": "https://www.wanted.co.kr/wd/373749",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "wanted:373396",
@@ -179,7 +178,7 @@
    "extra": "",
    "url": "https://www.wanted.co.kr/wd/373396",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49551441",
@@ -192,7 +191,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49551441",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49426340",
@@ -205,7 +204,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49426340",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49463410",
@@ -218,7 +217,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49463410",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49475365",
@@ -231,7 +230,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49475365",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49499515",
@@ -244,7 +243,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49499515",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49203648",
@@ -257,7 +256,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49203648",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49519528",
@@ -270,7 +269,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49519528",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49557865",
@@ -283,7 +282,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49557865",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49527022",
@@ -296,7 +295,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49527022",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49487794",
@@ -309,7 +308,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49487794",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49366914",
@@ -322,7 +321,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49366914",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49473944",
@@ -335,7 +334,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49473944",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49474744",
@@ -348,7 +347,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49474744",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49557502",
@@ -361,7 +360,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49557502",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49234360",
@@ -374,7 +373,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49234360",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49528778",
@@ -387,7 +386,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49528778",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49462910",
@@ -400,7 +399,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49462910",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:47:56+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49500147",
@@ -413,7 +412,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49500147",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:31:58+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49252279",
@@ -426,7 +425,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49252279",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:31:58+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49509059",
@@ -439,7 +438,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49509059",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T14:31:58+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49516354",
@@ -452,7 +451,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49516354",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T12:44:33+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49541912",
@@ -465,7 +464,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49541912",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T11:32:38+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   },
   {
    "id": "jobkorea:49476235",
@@ -478,7 +477,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49476235",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-07-16T11:32:38+09:00"
+   "last_seen": "2026-07-16T17:20:04+09:00"
   }
  ]
 }

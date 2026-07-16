@@ -132,13 +132,14 @@ def src_wanted(cfg):
     headers = {"Referer": "https://www.wanted.co.kr/search",
                "Accept": "application/json"}
     for kw in cfg["search_keywords"]:
-        r = session.get("https://www.wanted.co.kr/api/v4/search", params={
+        # 기본: /api/v4/jobs (검증된 경로). 실패할 때만 /api/v4/search 폴백.
+        r = session.get("https://www.wanted.co.kr/api/v4/jobs", params={
             "query": kw, "country": "kr", "job_sort": "job.latest_order",
+            "locations": "all", "limit": 50, "offset": 0,
         }, headers=headers, timeout=30)
-        if r.status_code == 404:  # 구버전 경로 폴백
-            r = session.get("https://www.wanted.co.kr/api/v4/jobs", params={
+        if r.status_code >= 400:
+            r = session.get("https://www.wanted.co.kr/api/v4/search", params={
                 "query": kw, "country": "kr", "job_sort": "job.latest_order",
-                "locations": "all", "limit": 50, "offset": 0,
             }, headers=headers, timeout=30)
         r.raise_for_status()
         body = r.json()
@@ -363,8 +364,13 @@ def main():
     enriched = 0
     for jid in list(current.keys()):
         j = current[jid]
-        if j.get("source") != "jobkorea" or jid in prev_jobs or enriched >= 25:
+        already_filled = bool(prev_jobs.get(jid, {}).get("company"))
+        if j.get("source") != "jobkorea" or enriched >= 25 \
+                or (jid in prev_jobs and already_filled):
             continue
+        # 기존 공고인데 회사명이 비어있으면 이전 데이터 대신 이번에 보강
+        if jid in prev_jobs and not j.get("company"):
+            pass  # 보강 진행
         try:
             enrich_jobkorea(j)
             enriched += 1

@@ -129,18 +129,28 @@ def src_saramin(cfg):
 def src_wanted(cfg):
     """원티드 프론트엔드가 사용하는 검색 JSON 엔드포인트 (비공식)"""
     jobs = []
-    headers = {"Referer": "https://www.wanted.co.kr/search",
-               "Accept": "application/json"}
+    headers = {
+        "Referer": "https://www.wanted.co.kr/search",
+        "Accept": "application/json",
+        "Origin": "https://www.wanted.co.kr",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "cors",
+        "Sec-Fetch-Dest": "empty",
+    }
     for kw in cfg["search_keywords"]:
-        # 기본: /api/v4/jobs (검증된 경로). 실패할 때만 /api/v4/search 폴백.
-        r = session.get("https://www.wanted.co.kr/api/v4/jobs", params={
+        # 기본: /api/v4/jobs. 실패할 때만 /api/v4/search 폴백.
+        r1 = session.get("https://www.wanted.co.kr/api/v4/jobs", params={
             "query": kw, "country": "kr", "job_sort": "job.latest_order",
             "locations": "all", "limit": 50, "offset": 0,
         }, headers=headers, timeout=30)
-        if r.status_code >= 400:
+        r = r1
+        if r1.status_code >= 400:
             r = session.get("https://www.wanted.co.kr/api/v4/search", params={
                 "query": kw, "country": "kr", "job_sort": "job.latest_order",
             }, headers=headers, timeout=30)
+            if r.status_code >= 400:
+                raise RuntimeError(
+                    f"원티드 양쪽 경로 차단 (jobs {r1.status_code} / search {r.status_code})")
         r.raise_for_status()
         body = r.json()
         data = body.get("data", [])
@@ -206,14 +216,22 @@ def src_jobkorea(cfg):
             container = a.find_parent("article") or a.find_parent("li") \
                 or a.find_parent("div") or a
             ctx = container.get_text(" ", strip=True)
-            # 주변 텍스트에서 지역 단어만 추출 (필터 오탐 방지: ctx 전체를 쓰지 않음)
-            region = next((w for w in ("서울", "경기", "인천") if w in ctx[:200]), "")
-            m_exp = re.search(r"경력\s*\d+[~년][^\s]{0,6}", ctx)
+            # 회사명: 같은 카드 안의 기업정보 링크(Co_Read/company)에서 추출
+            company = ""
+            co_a = container.select_one("a[href*='Co_Read'], a[href*='/company/']")
+            if co_a:
+                cname = co_a.get_text(" ", strip=True)[:40]
+                if 1 < len(cname) <= 40 and cname != title and "기업정보" not in cname:
+                    company = cname
+            # 지역: "서울 강남구" 패턴 (필터 오탐 방지 위해 ctx 전체는 안 씀)
+            lm = re.search(r"(서울|경기|인천)\s?[가-힣]{0,8}[시구군]?", ctx[:250])
+            region = lm.group(0).strip() if lm else ""
+            m_exp = re.search(r"경력\s*\d+[~년][^\s]{0,6}|경력무관|신입", ctx)
             jobs.append({
                 "id": f"jobkorea:{jid}",
                 "source": "jobkorea",
                 "title": title,
-                "company": "",
+                "company": company,
                 "location": region,     # 미상("")이면 필터에서 통과 처리됨
                 "experience": m_exp.group(0) if m_exp else "",
                 "exp_min": None,
@@ -365,7 +383,7 @@ def main():
     for jid in list(current.keys()):
         j = current[jid]
         already_filled = bool(prev_jobs.get(jid, {}).get("company"))
-        if j.get("source") != "jobkorea" or enriched >= 25 \
+        if j.get("source") != "jobkorea" or enriched >= 8 \
                 or (jid in prev_jobs and already_filled):
             continue
         # 기존 공고인데 회사명이 비어있으면 이전 데이터 대신 이번에 보강

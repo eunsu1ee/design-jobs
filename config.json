@@ -45,7 +45,7 @@
     "텍스타일"
   ],
   "enabled_sources": {
-    "saramin": true,
+    "saramin": false,
     "wanted": true,
     "jobkorea": true,
     "catch": false

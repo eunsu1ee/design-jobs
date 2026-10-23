@@ -1,28 +1,28 @@
 {
- "updated": "2026-10-23T18:44:20+09:00",
+ "updated": "2026-10-23T22:04:58+09:00",
  "sources": {
   "saramin": {
    "ok": true,
    "count": 0,
    "note": "비활성화됨",
-   "at": "2026-10-23T18:44:20+09:00"
+   "at": "2026-10-23T22:04:58+09:00"
   },
   "wanted": {
    "ok": false,
    "error": "원티드 양쪽 경로 차단 (jobs 403 / search 403)",
-   "at": "2026-10-23T18:44:20+09:00"
+   "at": "2026-10-23T22:04:58+09:00"
   },
   "jobkorea": {
    "ok": true,
-   "count": 23,
-   "raw": 133,
-   "at": "2026-10-23T18:44:20+09:00"
+   "count": 24,
+   "raw": 134,
+   "at": "2026-10-23T22:04:58+09:00"
   },
   "catch": {
    "ok": true,
    "count": 0,
    "note": "비활성화됨",
-   "at": "2026-10-23T18:44:20+09:00"
+   "at": "2026-10-23T22:04:58+09:00"
   }
  },
  "jobs": [
@@ -30,14 +30,14 @@
    "id": "jobkorea:50226565",
    "source": "jobkorea",
    "title": "문구 브랜드 포포팬시 제품디자이너",
-   "company": "영프라자㈜",
-   "location": "경기 남양주시",
-   "experience": "신입",
+   "company": "",
+   "location": "",
+   "experience": "",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50226565",
    "first_seen": "2026-10-23T18:44:20+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:50215699",
@@ -50,7 +50,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50215699",
    "first_seen": "2026-10-22T14:42:07+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:50180866",
@@ -63,7 +63,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50180866",
    "first_seen": "2026-10-17T08:20:08+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:50174602",
@@ -76,20 +76,20 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50174602",
    "first_seen": "2026-10-17T08:20:08+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:50180691",
    "source": "jobkorea",
    "title": "[케어팟] 제품디자이너 경력직",
-   "company": "헬스앤바이오㈜",
-   "location": "서울 강남구",
-   "experience": "신입",
+   "company": "",
+   "location": "",
+   "experience": "",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50180691",
    "first_seen": "2026-10-16T14:22:08+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:50163912",
@@ -102,59 +102,59 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50163912",
    "first_seen": "2026-10-16T08:35:06+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:50174434",
    "source": "jobkorea",
    "title": "[계약직] 디자인-제품디자인",
-   "company": "",
-   "location": "",
-   "experience": "",
+   "company": "한국타이어앤테크놀로지(주)",
+   "location": "경기 성남시",
+   "experience": "신입",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50174434",
    "first_seen": "2026-10-15T22:04:35+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:50162338",
    "source": "jobkorea",
    "title": "디자인팀 (제품디자인) - 경력 채용",
-   "company": "㈜유니맥스 이엔엘",
-   "location": "인천 서구",
-   "experience": "신입",
+   "company": "",
+   "location": "",
+   "experience": "",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50162338",
    "first_seen": "2026-10-15T14:30:39+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:50168207",
    "source": "jobkorea",
    "title": "[현대자동차 협력사 (주)마바산업]서울  AI기반 제품 디자이너 채용공고",
-   "company": "",
-   "location": "서울",
-   "experience": "",
+   "company": "㈜마바산업",
+   "location": "서울 강남구",
+   "experience": "신입",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50168207",
    "first_seen": "2026-10-15T14:30:39+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:50162257",
    "source": "jobkorea",
    "title": "[코지네스트] 침구브랜드 제품디자이너 (상시채용 인재풀)",
-   "company": "㈜더코지네스트컴퍼니",
-   "location": "서울 강남구",
-   "experience": "신입",
+   "company": "",
+   "location": "",
+   "experience": "",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50162257",
    "first_seen": "2026-10-14T09:11:59+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:50161418",
@@ -193,7 +193,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50129613",
    "first_seen": "2026-10-10T09:35:15+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:50135903",
@@ -219,7 +219,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50111173",
    "first_seen": "2026-10-08T09:49:38+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:50110462",
@@ -238,27 +238,27 @@
    "id": "jobkorea:50117650",
    "source": "jobkorea",
    "title": "[힐러비] 제품디자인 담당자 채용",
-   "company": "힐러비㈜",
-   "location": "서울 구로구",
-   "experience": "신입",
-   "exp_min": null,
-   "extra": "",
-   "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50117650",
-   "first_seen": "2026-10-07T09:29:04+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
-  },
-  {
-   "id": "jobkorea:50116175",
-   "source": "jobkorea",
-   "title": "이너디자인에서 산업디자이너를 모십니다",
    "company": "",
    "location": "",
    "experience": "",
    "exp_min": null,
    "extra": "",
+   "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50117650",
+   "first_seen": "2026-10-07T09:29:04+09:00",
+   "last_seen": "2026-10-23T22:04:58+09:00"
+  },
+  {
+   "id": "jobkorea:50116175",
+   "source": "jobkorea",
+   "title": "이너디자인에서 산업디자이너를 모십니다",
+   "company": "이너디자인",
+   "location": "",
+   "experience": "신입",
+   "exp_min": null,
+   "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50116175",
    "first_seen": "2026-10-07T09:29:04+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:50043028",
@@ -316,40 +316,40 @@
    "id": "jobkorea:50085581",
    "source": "jobkorea",
    "title": "허그파파 유아 용품 제품디자인 담당자 모집",
-   "company": "",
-   "location": "",
-   "experience": "",
+   "company": "허그파파",
+   "location": "경기 성남시",
+   "experience": "신입",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50085581",
    "first_seen": "2026-10-03T09:16:04+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:50081734",
    "source": "jobkorea",
    "title": "[그레이스벨] 제품디자이너 채용 (제품 기획·디자인)",
-   "company": "㈜그레이스벨",
-   "location": "서울 금천구",
-   "experience": "신입",
-   "exp_min": null,
-   "extra": "",
-   "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50081734",
-   "first_seen": "2026-10-03T09:16:04+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
-  },
-  {
-   "id": "jobkorea:50097671",
-   "source": "jobkorea",
-   "title": "[매트리스1위] 수면밀도 제품디자이너",
    "company": "",
    "location": "",
    "experience": "",
    "exp_min": null,
    "extra": "",
+   "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50081734",
+   "first_seen": "2026-10-03T09:16:04+09:00",
+   "last_seen": "2026-10-23T22:04:58+09:00"
+  },
+  {
+   "id": "jobkorea:50097671",
+   "source": "jobkorea",
+   "title": "[매트리스1위] 수면밀도 제품디자이너",
+   "company": "㈜밀도",
+   "location": "서울 성동구",
+   "experience": "신입",
+   "exp_min": null,
+   "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50097671",
    "first_seen": "2026-10-03T09:16:04+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:50079077",
@@ -407,14 +407,14 @@
    "id": "jobkorea:50072093",
    "source": "jobkorea",
    "title": "제품디자이너 채용",
-   "company": "",
-   "location": "",
-   "experience": "",
+   "company": "㈜세나테크놀로지",
+   "location": "서울 강남구",
+   "experience": "신입",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50072093",
    "first_seen": "2026-09-30T15:15:20+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:50035958",
@@ -459,14 +459,14 @@
    "id": "jobkorea:49997308",
    "source": "jobkorea",
    "title": "[SBS아카데미AIX학원(수원)] 제품디자인 산업기사 취득과정 강사 구인",
-   "company": "SBS아카데미AIX학원",
-   "location": "경기 수원시",
-   "experience": "신입",
+   "company": "",
+   "location": "",
+   "experience": "",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49997308",
    "first_seen": "2026-09-22T18:37:36+09:00",
-   "last_seen": "2026-10-23T14:41:23+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:50009491",
@@ -596,7 +596,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49974983",
    "first_seen": "2026-09-13T07:54:05+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:49955515",
@@ -888,14 +888,14 @@
    "id": "jobkorea:49891893",
    "source": "jobkorea",
    "title": "특화디자인, 환경디자인, 산업디자인 외부환경 디자이너 채용",
-   "company": "",
-   "location": "",
-   "experience": "",
+   "company": "디자인에이프로㈜",
+   "location": "서울 금천구",
+   "experience": "신입",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49891893",
    "first_seen": "2026-09-02T08:08:47+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:49901449",
@@ -953,14 +953,14 @@
    "id": "jobkorea:49878518",
    "source": "jobkorea",
    "title": "아남전자(주) 연구지원팀(제품디자인&연구지원) 경력 채용",
-   "company": "아남전자㈜",
-   "location": "서울 구로구",
-   "experience": "신입",
+   "company": "",
+   "location": "",
+   "experience": "",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49878518",
    "first_seen": "2026-08-30T19:15:43+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:49873909",
@@ -1090,7 +1090,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49848131",
    "first_seen": "2026-08-27T09:33:20+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:49862424",
@@ -1909,7 +1909,7 @@
    "extra": "",
    "url": "https://www.wanted.co.kr/wd/370748",
    "first_seen": "2026-07-16T12:31:55+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:49549161",
@@ -1987,7 +1987,7 @@
    "extra": "",
    "url": "https://www.wanted.co.kr/wd/375137",
    "first_seen": "2026-07-15T14:22:55+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:49565621",
@@ -2013,7 +2013,7 @@
    "extra": "",
    "url": "https://www.wanted.co.kr/wd/373749",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "wanted:373396",
@@ -2026,7 +2026,7 @@
    "extra": "",
    "url": "https://www.wanted.co.kr/wd/373396",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-10-23T18:44:20+09:00"
+   "last_seen": "2026-10-23T22:04:58+09:00"
   },
   {
    "id": "jobkorea:49516354",

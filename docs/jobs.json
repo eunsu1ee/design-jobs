@@ -1,29 +1,28 @@
 {
- "updated": "2026-11-18T02:23:12+09:00",
+ "updated": "2026-11-18T11:46:50+09:00",
  "sources": {
   "saramin": {
    "ok": true,
    "count": 0,
    "note": "비활성화됨",
-   "at": "2026-11-18T02:23:12+09:00"
+   "at": "2026-11-18T11:46:50+09:00"
   },
   "wanted": {
-   "ok": true,
-   "count": 0,
-   "raw": 0,
-   "at": "2026-11-18T02:23:12+09:00"
+   "ok": false,
+   "error": "원티드 양쪽 경로 차단 (jobs 403 / search 403)",
+   "at": "2026-11-18T11:46:50+09:00"
   },
   "jobkorea": {
    "ok": true,
-   "count": 24,
-   "raw": 139,
-   "at": "2026-11-18T02:23:12+09:00"
+   "count": 23,
+   "raw": 138,
+   "at": "2026-11-18T11:46:50+09:00"
   },
   "catch": {
    "ok": true,
    "count": 0,
    "note": "비활성화됨",
-   "at": "2026-11-18T02:23:12+09:00"
+   "at": "2026-11-18T11:46:50+09:00"
   }
  },
  "jobs": [
@@ -31,27 +30,27 @@
    "id": "jobkorea:50369997",
    "source": "jobkorea",
    "title": "[모윰] 제품 디자인 신입 및 경력 채용(정규직)",
-   "company": "주식회사 모윰",
-   "location": "서울 서초구",
+   "company": "",
+   "location": "",
    "experience": "신입",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50369997",
    "first_seen": "2026-11-18T02:23:12+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50370193",
    "source": "jobkorea",
    "title": "[모윰] 제품 디자인 신입 및 경력 채용(정규직)",
-   "company": "㈜두두스토리",
-   "location": "서울 서초구",
+   "company": "",
+   "location": "",
    "experience": "신입",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50370193",
    "first_seen": "2026-11-18T02:23:12+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50336017",
@@ -64,7 +63,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50336017",
    "first_seen": "2026-11-18T02:23:12+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50336065",
@@ -77,7 +76,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50336065",
    "first_seen": "2026-11-17T17:45:54+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50341775",
@@ -109,14 +108,14 @@
    "id": "jobkorea:50364745",
    "source": "jobkorea",
    "title": "제품 디자인  담당자 채용",
-   "company": "",
-   "location": "",
-   "experience": "",
+   "company": "㈜빈아코리아",
+   "location": "서울 금천구",
+   "experience": "신입",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50364745",
    "first_seen": "2026-11-14T10:20:26+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50362059",
@@ -135,14 +134,14 @@
    "id": "jobkorea:50358158",
    "source": "jobkorea",
    "title": "감각적인 산업디자이너 제품디자인 및  3D 모델링, 그래픽 상세페이지",
-   "company": "",
-   "location": "",
-   "experience": "",
+   "company": "바닐라모바일",
+   "location": "인천 부평구",
+   "experience": "신입",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50358158",
    "first_seen": "2026-11-13T01:34:59+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50352172",
@@ -155,7 +154,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50352172",
    "first_seen": "2026-11-13T01:34:59+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50326019",
@@ -187,14 +186,14 @@
    "id": "jobkorea:50326549",
    "source": "jobkorea",
    "title": "태주공업(주) 개발팀-제품디자인 채용",
-   "company": "태주공업㈜",
-   "location": "인천 남동구",
-   "experience": "신입",
+   "company": "",
+   "location": "",
+   "experience": "",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50326549",
    "first_seen": "2026-11-12T00:52:01+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50309587",
@@ -213,27 +212,27 @@
    "id": "jobkorea:50179668",
    "source": "jobkorea",
    "title": "[PEACEMINUSONE BEAUTY] 제품 디자인(경력직)",
-   "company": "㈜구다이글로벌",
-   "location": "서울특별시",
-   "experience": "신입",
+   "company": "",
+   "location": "",
+   "experience": "",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50179668",
    "first_seen": "2026-11-10T16:57:56+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50333391",
    "source": "jobkorea",
    "title": "(포포팬시)문구 브랜드  제품디자이너",
-   "company": "영프라자㈜",
-   "location": "경기 남양주시",
-   "experience": "신입",
+   "company": "",
+   "location": "",
+   "experience": "",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50333391",
    "first_seen": "2026-11-10T03:20:13+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50327628",
@@ -252,14 +251,14 @@
    "id": "jobkorea:50328090",
    "source": "jobkorea",
    "title": "[케어팟] 제품디자이너 경력직",
-   "company": "",
-   "location": "",
-   "experience": "",
+   "company": "헬스앤바이오㈜",
+   "location": "서울 강남구",
+   "experience": "신입",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50328090",
    "first_seen": "2026-11-09T16:34:36+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50315464",
@@ -272,20 +271,20 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50315464",
    "first_seen": "2026-11-08T09:17:26+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50319202",
    "source": "jobkorea",
    "title": "FIVICS 제품디자이너 채용",
-   "company": "",
-   "location": "",
-   "experience": "",
+   "company": "㈜파이빅스",
+   "location": "경기 수원시",
+   "experience": "신입",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50319202",
    "first_seen": "2026-11-07T15:47:42+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50314439",
@@ -324,7 +323,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50284557",
    "first_seen": "2026-11-04T10:07:04+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50291052",
@@ -356,14 +355,14 @@
    "id": "jobkorea:50280506",
    "source": "jobkorea",
    "title": "[매트리스1위] 수면밀도 제품디자이너",
-   "company": "",
-   "location": "",
-   "experience": "",
+   "company": "㈜밀도",
+   "location": "서울 성동구",
+   "experience": "신입",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50280506",
    "first_seen": "2026-11-03T02:49:56+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:49975778",
@@ -415,7 +414,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50214513",
    "first_seen": "2026-11-01T08:58:16+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50275655",
@@ -428,7 +427,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50275655",
    "first_seen": "2026-11-01T08:58:16+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50273979",
@@ -473,14 +472,14 @@
    "id": "jobkorea:50254952",
    "source": "jobkorea",
    "title": "(주)코텍 제품 디자이너(경력) 담당자 채용",
-   "company": "",
-   "location": "",
-   "experience": "",
+   "company": "㈜코텍",
+   "location": "인천 연수구",
+   "experience": "신입",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50254952",
    "first_seen": "2026-10-29T09:39:58+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50258335",
@@ -493,7 +492,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50258335",
    "first_seen": "2026-10-29T09:39:58+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50261159",
@@ -512,14 +511,14 @@
    "id": "jobkorea:50242685",
    "source": "jobkorea",
    "title": "아남전자(주) 연구지원팀(제품디자인&연구지원) 경력 채용",
-   "company": "아남전자㈜",
-   "location": "서울 구로구",
-   "experience": "신입",
+   "company": "",
+   "location": "",
+   "experience": "",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50242685",
    "first_seen": "2026-10-28T09:19:22+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50127238",
@@ -584,7 +583,7 @@
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50215699",
    "first_seen": "2026-10-22T14:42:07+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50180866",
@@ -941,14 +940,14 @@
    "id": "jobkorea:50072093",
    "source": "jobkorea",
    "title": "제품디자이너 채용",
-   "company": "",
-   "location": "",
-   "experience": "",
+   "company": "㈜세나테크놀로지",
+   "location": "서울 강남구",
+   "experience": "신입",
    "exp_min": null,
    "extra": "",
    "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/50072093",
    "first_seen": "2026-09-30T15:15:20+09:00",
-   "last_seen": "2026-11-18T02:23:12+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:50035958",
@@ -2443,7 +2442,7 @@
    "extra": "",
    "url": "https://www.wanted.co.kr/wd/370748",
    "first_seen": "2026-07-16T12:31:55+09:00",
-   "last_seen": "2026-11-17T23:05:59+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:49549161",
@@ -2521,7 +2520,7 @@
    "extra": "",
    "url": "https://www.wanted.co.kr/wd/375137",
    "first_seen": "2026-07-15T14:22:55+09:00",
-   "last_seen": "2026-11-17T23:05:59+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:49565621",
@@ -2547,7 +2546,7 @@
    "extra": "",
    "url": "https://www.wanted.co.kr/wd/373749",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-11-17T23:05:59+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "wanted:373396",
@@ -2560,7 +2559,7 @@
    "extra": "",
    "url": "https://www.wanted.co.kr/wd/373396",
    "first_seen": "2026-07-14T18:07:59+09:00",
-   "last_seen": "2026-11-17T23:05:59+09:00"
+   "last_seen": "2026-11-18T11:46:50+09:00"
   },
   {
    "id": "jobkorea:49516354",
